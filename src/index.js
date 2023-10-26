@@ -5,16 +5,16 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./routes/RootLayout";
-import ClassificationComp from "./routes/classification";
+import HistoryComp from "./routes/history";
 
 const router = createBrowserRouter([
   { path: "/", element: <App /> },
   {
     path: "/",
     element: <RootLayout />,
-    children: [{ path: "/classification", element: <ClassificationComp /> }],
+    children: [{ path: "/history", element: <HistoryComp /> }],
   },
-  { path: "/history", element: <App /> },
+  { path: "/classification", element: <App /> },
 ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

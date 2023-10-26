@@ -3,7 +3,7 @@ import Tools from "./boxes/Tools";
 import Boxes from "./boxes/Boxes";
 import TableComp from "./table/TableComp";
 
-const ClassificationComp = () => {
+const HistoryComp = () => {
   return (
     <div>
       <Tools />
@@ -13,4 +13,4 @@ const ClassificationComp = () => {
   );
 };
 
-export default ClassificationComp;
+export default HistoryComp;

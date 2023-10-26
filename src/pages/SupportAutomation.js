@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import Tabs from '../components/Tab'
 import AIBuilder from '../components/AIBuilder'
+import Outcome from '../components/Outcome'
+import History from '../components/History'
 
 export default function SupportAutomation() {
 
@@ -17,7 +19,7 @@ export default function SupportAutomation() {
 
   return (
     <>
-      <div className="mx-auto max-w-full sm:px-6 lg:px-8">
+      <div className="max-w-full sm:px-6 lg:px-8">
         <Tabs onTabClick={onTabClick} tabValue={tab} />
         <main>
           {(() => {
@@ -25,9 +27,9 @@ export default function SupportAutomation() {
               case 1:
                 return <AIBuilder />
               case 2:
-                return <></>
+                return <Outcome />
               case 3:
-                return <></>
+                return <History />
               default:
                 return null
             }

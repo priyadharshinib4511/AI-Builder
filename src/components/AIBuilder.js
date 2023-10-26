@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import Step1 from "./Step1";
 import Step2 from "./Step2";
 import Step3 from "./Step3";
@@ -14,10 +14,10 @@ export default function AIBuilder() {
     }
 
     return (
-        <div className="mx-auto max-w-full py-6 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-2">
+        <div className="max-w-full h-full py-6">
+            <div class="grid grid-cols-2 gap-4 h-full">
                 <div>
-                    <Stepper onStepClick={onStepClick} />
+                    <Stepper onStepClick={onStepClick} stepValue={step} />
                 </div>
                 <div>
                     {(() => {
@@ -29,7 +29,7 @@ export default function AIBuilder() {
                             case 3:
                                 return <Step3 />
                             case 4:
-                                return <div className='w-max'><Step4 /></div>; break;
+                                return <div className='w-full'><Step4 /></div>; break;
                             default:
                                 return null
                         }

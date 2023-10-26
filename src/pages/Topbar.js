@@ -1,8 +1,6 @@
 /* This example requires Tailwind CSS v2.0+ */
-import { Fragment, useState } from 'react'
-import { Dialog, Transition } from '@headlessui/react'
-import { sidebar_menu} from '../constants.js'
-import Page1 from '../pages/SNOWAnalyser.js'
+import { Fragment } from 'react'
+import { Transition } from '@headlessui/react'
 import { Disclosure, Menu } from '@headlessui/react'
 
 // const navigation = sidebar_menu
@@ -13,12 +11,14 @@ const user = {
   imageUrl:
     'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80',
 }
+
 const navigation = [
-  { name: 'SNOW Analyser', href: '#', current: true },
-  { name: 'Code Review', href: '#', current: false },
-  { name: 'Test Suite', href: '#', current: false },
-  { name: 'API Documentation', href: '#', current: false },
+  { name: 'Application Automation', href: '/application-automation', current: true },
+  { name: 'Support Automation', href: '/support-automation', current: false },
+  { name: 'Devops Automation', href: '/devops-automation', current: false },
+  { name: 'Testing Automation', href: '/testing-automation', current: false },
 ]
+
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
   { name: 'Settings', href: '#' },
@@ -29,52 +29,12 @@ function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-export default function Sidebar() {
-  const [sidebarOpen, setSidebarOpen] = useState(false)
+export default function Topbar() {
 
-  const path = window.location.pathname
 
-  const setCurrentSelection = (path) => {
-    switch(path){
-      case sidebar_menu[0].href:
-        return sidebar_menu[0].name;
-      case sidebar_menu[1].href:
-        return sidebar_menu[1].name;
-      case sidebar_menu[2].href:
-          return sidebar_menu[2].name;        
-      case sidebar_menu[3].href:
-          return sidebar_menu[3].name;
-      case sidebar_menu[4].href:
-          return sidebar_menu[4].name;
-      case sidebar_menu[5].href:
-          return sidebar_menu[5].name;
-      case sidebar_menu[6].href:
-        return sidebar_menu[6].name;
-      default:
-        return <></> 
-    }
-  }
+  let currentpath = window.location.pathname
 
-  const renderMainComponent = (path) => {
-    switch(path){
-      case sidebar_menu[0].href:
-        return <Page1 />;
-      case sidebar_menu[1].href:
-        return <Page1 />;
-      case sidebar_menu[2].href:
-          return <Page1 />;        
-      case sidebar_menu[3].href:
-          return <Page1 />;
-      case sidebar_menu[4].href:
-          return <Page1 />;
-      case sidebar_menu[5].href:
-          return <Page1 />;
-      case sidebar_menu[6].href:
-        return <Page1 />;
-      default:
-        return <></> 
-    }
-  }
+
 
 
   return (
@@ -107,12 +67,12 @@ export default function Sidebar() {
                             key={item.name}
                             href={item.href}
                             className={classNames(
-                              item.current
+                              currentpath === item.href
                                 ? 'bg-gray-900 text-white'
                                 : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                               'rounded-md px-3 py-2 text-sm font-medium'
                             )}
-                            aria-current={item.current ? 'page' : undefined}
+                            aria-current={currentpath === item.href}
                           >
                             {item.name}
                           </a>

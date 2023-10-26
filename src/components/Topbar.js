@@ -4,6 +4,7 @@ import { Dialog, Transition } from '@headlessui/react'
 import { sidebar_menu} from '../constants.js'
 import Page1 from '../pages/SNOWAnalyser.js'
 import { Disclosure, Menu } from '@headlessui/react'
+import { Link } from 'react-router-dom'
 
 // const navigation = sidebar_menu
 
@@ -15,9 +16,9 @@ const user = {
 }
 const navigation = [
   { name: 'SNOW Analyser', href: '#', current: true },
-  { name: 'Code Review', href: '#', current: false },
-  { name: 'Test Suite', href: '#', current: false },
-  { name: 'API Documentation', href: '#', current: false },
+  { name: 'AI Builder', href: '/', current: false },
+  { name: 'Classification', href: '/classification', current: false },
+  { name: 'History', href: '/history', current: false },
 ]
 const userNavigation = [
   { name: 'Your Profile', href: '#' },
@@ -103,9 +104,9 @@ export default function Sidebar() {
                     <div className="hidden md:block">
                       <div className="ml-10 flex items-baseline space-x-4">
                         {navigation.map((item) => (
-                          <a
+                          <Link
                             key={item.name}
-                            href={item.href}
+                            to={item.href}
                             className={classNames(
                               item.current
                                 ? 'bg-gray-900 text-white'
@@ -115,7 +116,7 @@ export default function Sidebar() {
                             aria-current={item.current ? 'page' : undefined}
                           >
                             {item.name}
-                          </a>
+                          </Link>
                         ))}
                       </div>
                     </div>

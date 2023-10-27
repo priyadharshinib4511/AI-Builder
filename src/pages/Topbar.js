@@ -32,7 +32,7 @@ function classNames(...classes) {
 export default function Topbar() {
 
 
-  let currentpath = window.location.pathname
+  let currentpath = window.location.href
 
   console.log("topbar", currentpath)
 

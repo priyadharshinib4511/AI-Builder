@@ -13,7 +13,7 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Application Automation', href: '/application-automation', current: true },
+  { name: 'Application Automation', href: '/application-automation', current: false },
   { name: 'Support Automation', href: '/support-automation', current: false },
   { name: 'Devops Automation', href: '/devops-automation', current: false },
   { name: 'Testing Automation', href: '/testing-automation', current: false },
@@ -34,8 +34,7 @@ export default function Topbar() {
 
   let currentpath = window.location.pathname
 
-
-
+  console.log("topbar", currentpath)
 
   return (
     <>
@@ -67,12 +66,12 @@ export default function Topbar() {
                             key={item.name}
                             href={item.href}
                             className={classNames(
-                              currentpath === item.href
+                              currentpath === item.href || item.current
                                 ? 'bg-gray-900 text-white'
                                 : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                               'rounded-md px-3 py-2 text-sm font-medium'
                             )}
-                            aria-current={currentpath === item.href}
+                            aria-current={currentpath === item.href ||item.current}
                           >
                             {item.name}
                           </a>

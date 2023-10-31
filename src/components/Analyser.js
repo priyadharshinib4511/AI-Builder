@@ -5,7 +5,7 @@ import Step3 from "./Step3";
 import Step4 from "./Step4";
 import Stepper from "./Stepper";
 
-export default function AIBuilder() {
+export default function Analyser() {
 
     const [step, setStep] = useState(1)
 

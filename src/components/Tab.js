@@ -2,9 +2,10 @@ import { CubeTransparentIcon, ChartSquareBarIcon, ArchiveIcon } from '@heroicons
 
 
 const tabs = [
-    { id: 1, name: 'AI Builder', href: '#', icon: CubeTransparentIcon, current: false },
+    { id: 1, name: 'Analyser', href: '#', icon: CubeTransparentIcon, current: false },
     { id: 2, name: 'Outcome', href: '#', icon: ChartSquareBarIcon, current: false },
     { id: 3, name: 'History', href: '#', icon: ArchiveIcon, current: true },
+    { id: 4, name: 'Default', href: '#', icon:ArchiveIcon, current: true },
 ]
 
 function classNames(...classes) {

@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react'
 import Tabs from '../components/Tab'
-import AIBuilder from '../components/AIBuilder'
+import Analyser from '../components/Analyser'
 import Outcome from '../components/Outcome'
 import History from '../components/History'
+import Default from '../components/Default'
 
 export default function SupportAutomation() {
 
@@ -25,11 +26,13 @@ export default function SupportAutomation() {
           {(() => {
             switch (tab) {
               case 1:
-                return <AIBuilder />
+                return <Analyser />
               case 2:
                 return <Outcome />
               case 3:
                 return <History />
+              case 4:
+                return <Default />
               default:
                 return null
             }

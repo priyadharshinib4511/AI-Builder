@@ -13,10 +13,10 @@ const user = {
 }
 
 const navigation = [
-  { name: 'Application Automation', href: '/application-automation', current: false },
-  { name: 'Support Automation', href: '/support-automation', current: false },
-  { name: 'Devops Automation', href: '/devops-automation', current: false },
-  { name: 'Testing Automation', href: '/testing-automation', current: false },
+  { name: 'Application Automation', href: 'application-automation', current: false },
+  { name: 'Support Automation', href: 'support-automation', current: true },
+  { name: 'Devops Automation', href: 'devops-automation', current: false },
+  { name: 'Testing Automation', href: 'testing-automation', current: false },
 ]
 
 const userNavigation = [
@@ -33,6 +33,10 @@ export default function Topbar() {
 
 
   let currentpath = window.location.href
+
+  currentpath = currentpath.split('/')
+
+  currentpath = currentpath[currentpath.length - 1]
 
   console.log("topbar", currentpath)
 
@@ -66,12 +70,12 @@ export default function Topbar() {
                             key={item.name}
                             href={item.href}
                             className={classNames(
-                              currentpath === item.href || item.current
+                              (currentpath === item.href) || (item.current && currentpath.length === 0)
                                 ? 'bg-gray-900 text-white'
                                 : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                               'rounded-md px-3 py-2 text-sm font-medium'
                             )}
-                            aria-current={currentpath === item.href ||item.current}
+                            aria-current={(currentpath === item.href) || (item.current && currentpath.length === 0)}
                           >
                             {item.name}
                           </a>

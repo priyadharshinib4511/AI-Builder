@@ -28,11 +28,11 @@ export default function SupportAutomation() {
               case 1:
                 return <Analyser />
               case 2:
-                return <Outcome />
-              case 3:
-                return <History />
-              case 4:
                 return <Default />
+              case 3:
+                return <Outcome />
+              case 4:
+                return <History />
               default:
                 return null
             }

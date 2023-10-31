@@ -7,19 +7,20 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import RootLayout from "./routes/RootLayout";
 import HistoryComp from "./routes/history";
 
-const router = createBrowserRouter([
-  { path: "/", element: <App /> },
-  {
-    path: "/",
-    element: <RootLayout />,
-    children: [{ path: "/history", element: <HistoryComp /> }],
-  },
-  { path: "/classification", element: <App /> },
-]);
+// const router = createBrowserRouter([
+//   { path: "/", element: <App /> },
+//   {
+//     path: "/",
+//     element: <RootLayout />,
+//     children: [{ path: "/history", element: <HistoryComp /> }],
+//   },
+//   { path: "/classification", element: <App /> },
+// ]);
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    {/* <RouterProvider router={router} /> */}
+    <App />
   </React.StrictMode>
 );
 
